@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="PointOfSale Smoke test suite">
+
+    <test name="PointOfSale Smoke Tests">
+        <packages>
+            <package name="smoke_tests"/>
+        </packages>
+    </test>
+
+</suite>
