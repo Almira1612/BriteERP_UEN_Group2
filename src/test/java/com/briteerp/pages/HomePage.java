@@ -1,9 +1,12 @@
 package com.briteerp.pages;
 
+import com.briteerp.utilities.TestBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage {
+public class HomePage extends TestBase {
+
+
 
         @FindBy(xpath = "//ul[@class='nav navbar-nav navbar-left oe_application_menu_placeholder']//li[6]//a[1]")
         public WebElement pointOfSaleElement;
