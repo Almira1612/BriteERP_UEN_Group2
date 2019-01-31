@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     protected WebDriver driver;
-    protected Pages pages;
+
 
     protected static ExtentReports report;
     private static ExtentHtmlReporter htmlReporter;
@@ -25,7 +25,7 @@ public class TestBase {
     @BeforeMethod(alwaysRun = true)
     public void setupMethod() {
         driver = Driver.getDriver();
-        pages = new Pages();
+
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(ConfigurationReader.getProperty("url"));
     }
