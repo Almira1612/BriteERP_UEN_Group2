@@ -8,7 +8,7 @@ public class HomePage {
 
 
 
-    static public @FindBy(xpath = "//ul[@class='nav navbar-nav navbar-left oe_application_menu_placeholder']//li[6]//a[1]")
+    static public @FindBy(xpath = "//a[@class='oe_menu_toggler']//span[@class='oe_menu_text'][contains(text(),'Point of Sale')]")
     WebElement pointOfSaleElement;
 
 
