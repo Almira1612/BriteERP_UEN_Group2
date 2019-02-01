@@ -20,7 +20,7 @@ public class ferukTestCases extends TestBase {
 
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void st1(){
         new ferukTestCases();
         new EnvironmentPage();
@@ -28,7 +28,7 @@ public class ferukTestCases extends TestBase {
     }
 
 
-    @Test
+    @Test(groups = "ST")
     public void test01(){
 
        EnvironmentPage.selectEnvironment();

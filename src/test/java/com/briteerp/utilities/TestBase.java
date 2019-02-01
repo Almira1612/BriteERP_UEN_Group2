@@ -79,5 +79,6 @@ public class TestBase {
     @AfterTest(alwaysRun = true)
     public void tearDownTest() {
         report.flush();
+
     }
 }
