@@ -1,10 +1,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="PointOfSale Smoke test suite">
+<suite name="PointOfSale test">
+    <test name="Smoke Test">
+        <groups>
+            <run>
+                <include name="ST"/>
+            </run>
+        </groups>
 
-    <test name="PointOfSale Smoke Tests">
-        <packages>
-            <package name="smoke_tests"/>
-        </packages>
+        <classes>
+            <class name="com.briteerp.tests.ferukTestCases"/>
+        </classes>
     </test>
-
 </suite>
