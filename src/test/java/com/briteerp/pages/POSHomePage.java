@@ -6,14 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends TestBase {
+public class POSHomePage extends TestBase {
 
-    public HomePage() {
+    public POSHomePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    static public @FindBy(xpath = "//ul[@class='nav navbar-nav navbar-left oe_application_menu_placeholder']//li[6]//a[1]")
-    WebElement pointOfSaleElement;
+
 
     static public @FindBy(xpath = "//div[@class='oe_secondary_menu_section active']//span[@class='oe_menu_text'][contains(text(),'Dashboard')]")
     WebElement dashBoardElement;
@@ -42,7 +41,7 @@ public class HomePage extends TestBase {
     static  public  @FindBy(xpath = "//span[contains(text(),'PoS Categories')]")
      WebElement POSCategoriesElement;
 
-    static public String currentTitle = ""
+
 
 
 }

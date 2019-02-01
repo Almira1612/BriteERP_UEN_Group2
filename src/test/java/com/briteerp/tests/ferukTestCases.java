@@ -2,6 +2,8 @@ package com.briteerp.tests;
 
 
 import com.briteerp.pages.EnvironmentPage;
+import com.briteerp.pages.HomePage;
+import com.briteerp.pages.POSHomePage;
 import com.briteerp.pages.LoginPage;
 import com.briteerp.utilities.Driver;
 import com.briteerp.utilities.TestBase;
@@ -22,6 +24,7 @@ public class ferukTestCases extends TestBase {
     public void st1(){
         new ferukTestCases();
         new EnvironmentPage();
+        new POSHomePage();
     }
 
 
@@ -31,6 +34,9 @@ public class ferukTestCases extends TestBase {
        EnvironmentPage.selectEnvironment();
        Assert.assertTrue(LoginPage.actualTitle.contains("Login"));
        LoginPage.login();
+       Assert.assertTrue(HomePage.currentTitle.contains("Inbox"));
+
+
 
     }
 }
