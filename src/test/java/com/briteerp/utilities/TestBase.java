@@ -15,7 +15,6 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     protected WebDriver driver;
-    protected Pages pages;
 
     protected static ExtentReports report;
     private static ExtentHtmlReporter htmlReporter;
@@ -25,8 +24,9 @@ public class TestBase {
     @BeforeMethod(alwaysRun = true)
     public void setupMethod() {
         driver = Driver.getDriver();
-        pages = new Pages();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(15,TimeUnit.SECONDS);
         driver.get(ConfigurationReader.getProperty("url"));
     }
 
@@ -69,24 +69,17 @@ public class TestBase {
 
         report.setSystemInfo("QA Engineer", "Admiral Kunkka");
 
-        htmlReporter.config().setDocumentTitle("Prestashop Reports");
-        htmlReporter.config().setReportName("Prestashop Automated Test Reports");
+        htmlReporter.config().setDocumentTitle("PointOfSale Reports");
+        htmlReporter.config().setReportName("PointOfSale Automated Test Reports");
 
 //        htmlReporter.config().setTheme(Theme.DARK);
 
     }
 
 
-
-
-
-
-
-
-
-
     @AfterTest(alwaysRun = true)
     public void tearDownTest() {
         report.flush();
+
     }
 }
