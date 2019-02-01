@@ -13,15 +13,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class ferukTestCases extends TestBase {
-    ferukTestCases(){
-        PageFactory.initElements(Driver.getDriver(),LoginPage.class);
+    ferukTestCases() {
+        PageFactory.initElements(Driver.getDriver(), LoginPage.class);
     }
 
 
-
-
     @BeforeMethod(alwaysRun = true)
-    public void st1(){
+    public void st1() {
         new ferukTestCases();
         new EnvironmentPage();
         new POSHomePage();
@@ -29,12 +27,13 @@ public class ferukTestCases extends TestBase {
 
 
     @Test(groups = "ST")
-    public void test01(){
+    public void test01() throws InterruptedException {
 
-       EnvironmentPage.selectEnvironment();
-       Assert.assertTrue(LoginPage.actualTitle.contains("Login"));
-       LoginPage.login();
-       Assert.assertTrue(HomePage.currentTitle.contains("Inbox"));
+        EnvironmentPage.selectEnvironment();
+        Assert.assertTrue(LoginPage.actualTitle.contains("Login"));
+        LoginPage.login();
+        Assert.assertTrue(HomePage.currentTitle.contains("Inbox"));
+        HomePage.pointOfSaleElement.click();
 
 
 
