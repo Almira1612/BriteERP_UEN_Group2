@@ -1,18 +1,24 @@
 package com.briteerp.pages;
 
+import com.briteerp.utilities.Driver;
 import com.briteerp.utilities.TestBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class EnvironmentPage extends TestBase {
 
+
+    public EnvironmentPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
+
     //The environment we are working on (BriteErpDemo)
-    @FindBy(xpath = "(//a[@class='list-group-item'])[2]")
-    public WebElement serverLink;
+    static  public @FindBy(xpath = "(//a[@class='list-group-item'])[2]")
+     WebElement serverLink;
 
 
-
-    public void selectEnvironment(){
-       serverLink.click();
+    public static void selectEnvironment() {
+        serverLink.click();
     }
 }
