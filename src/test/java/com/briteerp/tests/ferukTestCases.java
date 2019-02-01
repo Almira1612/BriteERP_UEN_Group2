@@ -23,6 +23,7 @@ public class ferukTestCases extends TestBase {
         new ferukTestCases();
         new EnvironmentPage();
         new POSHomePage();
+        new HomePage();
     }
 
 
@@ -32,9 +33,10 @@ public class ferukTestCases extends TestBase {
         EnvironmentPage.selectEnvironment();
         Assert.assertTrue(LoginPage.actualTitle.contains("Login"));
         LoginPage.login();
+        Thread.sleep(5000);
         Assert.assertTrue(HomePage.currentTitle.contains("Inbox"));
+        Thread.sleep(5000);
         HomePage.pointOfSaleElement.click();
-
 
 
     }

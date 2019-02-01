@@ -25,7 +25,7 @@ public class TestBase {
     public void setupMethod() {
         driver = Driver.getDriver();
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(15,TimeUnit.SECONDS);
         driver.get(ConfigurationReader.getProperty("url"));
     }
