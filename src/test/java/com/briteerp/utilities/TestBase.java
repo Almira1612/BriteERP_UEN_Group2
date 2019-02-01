@@ -69,8 +69,8 @@ public class TestBase {
 
         report.setSystemInfo("QA Engineer", "Admiral Kunkka");
 
-        htmlReporter.config().setDocumentTitle("Prestashop Reports");
-        htmlReporter.config().setReportName("Prestashop Automated Test Reports");
+        htmlReporter.config().setDocumentTitle("PointOfSale Reports");
+        htmlReporter.config().setReportName("PointOfSale Automated Test Reports");
 
 //        htmlReporter.config().setTheme(Theme.DARK);
 
