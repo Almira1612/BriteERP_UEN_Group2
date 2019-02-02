@@ -22,7 +22,7 @@ public class LoginPage  {
     static  public @FindBy(xpath = "//button[@type='submit']")
      WebElement loginButton;
 
-    static public String actualTitle ="Login | Website localhost";
+    static public String currentTitle ="Login | Website localhost";
 
     public static void login() {
         emailInput.sendKeys(ConfigurationReader.getProperty("username"));
