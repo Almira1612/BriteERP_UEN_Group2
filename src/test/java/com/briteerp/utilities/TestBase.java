@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class TestBase {
     protected WebDriver driver;
 
+
     protected static ExtentReports report;
     private static ExtentHtmlReporter htmlReporter;
     protected static ExtentTest extentLogger;

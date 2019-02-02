@@ -8,8 +8,10 @@
         </groups>
 
         <classes>
-            <class name="com.briteerp.tests.ferukTestCases"/>
             <class name="com.briteerp.tests.PosCategoryTest"/>
+            <class name="com.briteerp.tests.ReportsTestCases"/>
+            <class name="com.briteerp.tests.POSTestCases"/>
+
         </classes>
     </test>
 </suite>
