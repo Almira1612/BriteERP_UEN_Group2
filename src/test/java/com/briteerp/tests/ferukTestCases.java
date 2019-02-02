@@ -28,77 +28,88 @@ public class ferukTestCases extends TestBase {
 
 
     @Test(groups = "ST")
-    public void test01() {
+    public void test01() throws InterruptedException {
 
         extentLogger = report.createTest("Verify the report`s page");
         extentLogger.info("Selecting the environment");
         EnvironmentPage.selectEnvironment();
         extentLogger.info("Verifying the title contain Login");
-        Assert.assertTrue(LoginPage.actualTitle.contains("Login"));
+        Assert.assertTrue(driver.getTitle().contains("Login"));
         extentLogger.info("Entering valid user credentials and click login");
         LoginPage.login();
+        Thread.sleep(5000);
         extentLogger.info("Verifying the title contains Inbox");
-        Assert.assertTrue(HomePage.currentTitle.contains("Inbox"));
+        Assert.assertTrue(driver.getTitle().contains("Inbox"));
         extentLogger.info("Clicking the PointofSale module");
         HomePage.pointOfSaleElement.click();
+        Thread.sleep(5000);
         extentLogger.info("Verifying the title contains Point of Sale");
-        Assert.assertTrue(POSHomePage.currentTitle.contains("Point of Sale"));
+        Assert.assertTrue(driver.getTitle().contains("Point of Sale"));
         extentLogger.info("Clicking the orders under reports");
         POSHomePage.reportingOrdersElement.click();
+        Thread.sleep(5000);
         extentLogger.info("Verifying the title contains Analysis");
-        Assert.assertTrue(POSReportingOrders.currentTitle.contains("Analysis"));
+        Assert.assertTrue(driver.getTitle().contains("Analysis"));
 
 
     }
 
     @Test(groups = "ST")
-    public void test02(){
+    public void test02() throws InterruptedException  {
 
         extentLogger = report.createTest("Verify the report`s page");
         extentLogger.info("Selecting the environment");
         EnvironmentPage.selectEnvironment();
         extentLogger.info("Verifying the title contain Login");
-        Assert.assertTrue(LoginPage.actualTitle.contains("Login"));
+        Assert.assertTrue(driver.getTitle().contains("Login"));
         extentLogger.info("Entering valid user credentials and click login");
         LoginPage.login();
+        Thread.sleep(5000);
         extentLogger.info("Verifying the title contains Inbox");
-        Assert.assertTrue(HomePage.currentTitle.contains("Inbox"));
+        Assert.assertTrue(driver.getTitle().contains("Inbox"));
         extentLogger.info("Clicking the PointofSale module");
         HomePage.pointOfSaleElement.click();
+        Thread.sleep(5000);
         extentLogger.info("Verifying the title contains Point of Sale");
-        Assert.assertTrue(POSHomePage.currentTitle.contains("Point of Sale"));
+        Assert.assertTrue(driver.getTitle().contains("Point of Sale"));
         extentLogger.info("Clicking the orders under reports");
         POSHomePage.reportingOrdersElement.click();
+        Thread.sleep(5000);
         extentLogger.info("Verifying the title contains Analysis");
-        Assert.assertTrue(POSReportingOrders.currentTitle.contains("Analysis"));
+        Assert.assertTrue(driver.getTitle().contains("Analysis"));
         extentLogger.info("Clicking graph view option");
         POSReportingOrders.graphElement.click();
+        Thread.sleep(5000);
         extentLogger.info("Verifying the graph is displaying");
         Assert.assertTrue(POSReportingOrders.graphImageElement.isDisplayed());
 
     }
 
     @Test(groups = "ST")
-    public void test03(){
+    public void test03() throws InterruptedException {
         extentLogger = report.createTest("Verify the report`s page");
         extentLogger.info("Selecting the environment");
         EnvironmentPage.selectEnvironment();
         extentLogger.info("Verifying the title contain Login");
-        Assert.assertTrue(LoginPage.actualTitle.contains("Login"));
+        Assert.assertTrue(driver.getTitle().contains("Login"));
         extentLogger.info("Entering valid user credentials and click login");
         LoginPage.login();
+        Thread.sleep(5000);
         extentLogger.info("Verifying the title contains Inbox");
-        Assert.assertTrue(HomePage.currentTitle.contains("Inbox"));
+        Assert.assertTrue(driver.getTitle().contains("Inbox"));
         extentLogger.info("Clicking the PointofSale module");
         HomePage.pointOfSaleElement.click();
+        Thread.sleep(5000);
         extentLogger.info("Verifying the title contains Point of Sale");
-        Assert.assertTrue(POSHomePage.currentTitle.contains("Point of Sale"));
+        Assert.assertTrue(driver.getTitle().contains("Point of Sale"));
         extentLogger.info("Clicking the orders under reports");
         POSHomePage.reportingOrdersElement.click();
+        Thread.sleep(5000);
         extentLogger.info("Verifying the title contains Analysis");
-        Assert.assertTrue(POSReportingOrders.currentTitle.contains("Analysis"));
+        Assert.assertTrue(driver.getTitle().contains("Analysis"));
         extentLogger.info("Clicking pivot view option");
         POSReportingOrders.pivotElement.click();
+        Thread.sleep(5000);
         extentLogger.info("Verifying the pivot table is displaying");
         Assert.assertTrue(POSReportingOrders.pivotImageElement.isDisplayed());
     }
