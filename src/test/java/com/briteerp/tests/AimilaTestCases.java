@@ -22,6 +22,8 @@ public class AimilaTestCases extends TestBase {
         new POSHomePage();
         new HomePage();
         new ConfigPOSPage();
+        new ConfigPOSEditPage();
+        new ConfigPOSNewPage();
 
         //Login and verify the pages
         extentLogger = report.createTest("Verify created new point of sale can be saved");
@@ -47,7 +49,7 @@ public class AimilaTestCases extends TestBase {
         extentLogger.info("Verifying the title contains Point of sale");
         Assert.assertTrue(driver.getTitle().contains("Point of Sale"));
     }
-    @Test
+    @Test(groups = "ST")
     public void CreatePOS() throws InterruptedException {
         //Create new POS
         extentLogger.info("Clicking Create button");
@@ -67,7 +69,7 @@ public class AimilaTestCases extends TestBase {
         Assert.assertEquals(ConfigPOSNewPage.NewPOSTitleElement.getText(),"Fairfax store");
     }
 
-    @Test
+    @Test(groups = "ST")
     public void changeOperationType() throws InterruptedException {
         //Go to POS and click edit button
         extentLogger.info("Select one Point of sale name");
