@@ -24,7 +24,7 @@ public class SalesDetailsTestCases extends TestBase {
 
 
 
-    @Test
+    @Test(groups = "ST")
     public void test01() throws InterruptedException {
         // user story BRIT-1492
         //test case BRIT-1698, i should be able to print the sales details page.
@@ -48,15 +48,10 @@ public class SalesDetailsTestCases extends TestBase {
 
 
 
-
-
-
-
-
     }
 
 
-    @Test
+     @Test(groups = "ST")
     public void test02() throws InterruptedException {
 
       // user story BRIT-1488
@@ -79,17 +74,6 @@ public class SalesDetailsTestCases extends TestBase {
         SalesDetailsPage.DeleteElement.click();
         Thread.sleep(5000);
         Assert.assertTrue(SalesDetailsPage.AfterDeletedPageElement.isDisplayed());
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
