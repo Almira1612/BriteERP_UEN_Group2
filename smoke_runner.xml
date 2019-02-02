@@ -8,7 +8,7 @@
         </groups>
 
         <classes>
-            <class name="com.briteerp.tests.ferukTestCases"/>
+            <class name="com.briteerp.tests.ReportsTestCases"/>
             <class name="com.briteerp.tests.AimilaTestCases"/>
         </classes>
     </test>
