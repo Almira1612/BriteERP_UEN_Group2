@@ -1,23 +1,21 @@
 package com.briteerp.tests;
 
 import com.briteerp.pages.*;
-import com.briteerp.utilities.ConfigurationReader;
 import com.briteerp.utilities.Driver;
 import com.briteerp.utilities.TestBase;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class AimilaTestCases extends TestBase {
-    public AimilaTestCases() {
+public class POSTestCases extends TestBase {
+    public POSTestCases() {
         PageFactory.initElements(Driver.getDriver(), LoginPage.class);
     }
 
     @BeforeMethod(alwaysRun = true)
     public void SetUp() throws InterruptedException {
-        new AimilaTestCases();
+        new POSTestCases();
         new EnvironmentPage();
         new POSHomePage();
         new HomePage();
