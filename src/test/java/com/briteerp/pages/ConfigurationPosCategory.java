@@ -21,7 +21,7 @@ public class ConfigurationPosCategory {
     public static @FindBy(xpath = "/html/body/div[1]/div[2]/div[2]/div/div/div/table/tbody/tr[1]")
     WebElement anycategory;
 
-    public static @FindBy (xpath ="//div[@class='o_kanban_view o_kanban_mobile o_kanban_ungrouped']")
+    public static @FindBy (xpath ="/html/body/div[1]/div[2]/div[1]/div[3]/div[3]/button[2]")
     WebElement kanbanviewOptionElement;
 
 
