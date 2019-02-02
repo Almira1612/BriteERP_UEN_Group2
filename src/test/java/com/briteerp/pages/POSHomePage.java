@@ -13,7 +13,6 @@ public class POSHomePage {
     }
 
 
-
     static public @FindBy(xpath = "//div[@class='oe_secondary_menu_section active']//span[@class='oe_menu_text'][contains(text(),'Dashboard')]")
     WebElement dashBoardElement;
 
@@ -26,22 +25,22 @@ public class POSHomePage {
     static public @FindBy(xpath = "(//a[@class='oe_menu_leaf'])[10]")
     WebElement catalogProductsElement;
 
-    static  public @FindBy(xpath = "(//a[@class='oe_menu_leaf'])[11]")
-     WebElement catalogPriceListElement;
+    static public @FindBy(xpath = "(//a[@class='oe_menu_leaf'])[11]")
+    WebElement catalogPriceListElement;
 
-    static  public @FindBy(xpath = "(//a[@class='oe_menu_leaf'])[12]")
-     WebElement reportingOrdersElement;
+    static public @FindBy(xpath = "(//a[@class='oe_menu_leaf'])[12]")
+    WebElement reportingOrdersElement;
 
-    static  public @FindBy(xpath = "(//a[@class='oe_menu_leaf'])[13]")
-     WebElement reportingSalesDetailsElement;
+    static public @FindBy(xpath = "(//a[@class='oe_menu_leaf'])[13]")
+    WebElement reportingSalesDetailsElement;
 
-    static  public @FindBy(xpath = "(//a[@class='oe_menu_leaf'])[14]")
-     WebElement configPosElement;
+    static public @FindBy(xpath = "(//a[@class='oe_menu_leaf'])[14]")
+    WebElement configPosElement;
 
-    static  public  @FindBy(xpath = "//span[contains(text(),'PoS Categories')]")
-     WebElement POSCategoriesElement;
+    static public @FindBy(xpath = "//span[contains(text(),'PoS Categories')]")
+    WebElement POSCategoriesElement;
 
-
+    static public String currentTitle = "Point of Sale - Odoo";
 
 
 }
