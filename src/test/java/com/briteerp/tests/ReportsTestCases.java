@@ -8,10 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
-public class ferukTestCases extends TestBase {
-    ferukTestCases() {
+public class ReportsTestCases extends TestBase {
+    ReportsTestCases() {
 
         PageFactory.initElements(Driver.getDriver(), LoginPage.class);
     }
@@ -19,7 +18,7 @@ public class ferukTestCases extends TestBase {
 
     @BeforeMethod(alwaysRun = true)
     public void st1() {
-        new ferukTestCases();
+        new ReportsTestCases();
         new EnvironmentPage();
         new POSHomePage();
         new HomePage();
