@@ -61,8 +61,8 @@ public class AimilaTestCases extends TestBase {
 
         //TODO -- can not locate element
         ConfigPOSNewPage.POSinputElement.sendKeys("Fairfax store");
-        Select type = new Select(ConfigPOSNewPage.TypeSelectElement);
-        type.selectByVisibleText("PoS Orders");
+        ConfigPOSNewPage.TypeSelectElement.click();
+
         ConfigPOSNewPage.POSSaveButton.click();
         Thread.sleep(3000);
         extentLogger.info("Verifying new POS is displayed");

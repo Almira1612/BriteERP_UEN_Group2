@@ -10,10 +10,10 @@ public class ConfigPOSNewPage{
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    public static @FindBy(xpath = "//div[@id=\"title\"]/h1/input")
+    public static @FindBy(xpath = "//div[@class='o_form_view o_form_editable']//div[@id='title']/h1/input")
     WebElement POSinputElement;
 
-    public static @FindBy(id = "o_field_input_839")
+    public static @FindBy(xpath = "//div[@class='o_form_view o_form_editable']//div[@class='o_input_dropdown']/input ")
     WebElement TypeSelectElement;
 
     public static @FindBy(xpath = "//div[@class='o_form_buttons_edit']/button[1]")
