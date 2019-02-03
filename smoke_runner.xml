@@ -8,8 +8,11 @@
         </groups>
 
         <classes>
+            <class name="com.briteerp.tests.PosCategoryTest"/>
             <class name="com.briteerp.tests.ReportsTestCases"/>
-            <class name="com.briteerp.tests.AimilaTestCases"/>
+            <class name="com.briteerp.tests.POSTestCases"/>
+            <class name="com.briteerp.tests.PosOrderTestCase"/>
+            <class name="com.briteerp.tests.ProductsTestCase"/>
         </classes>
     </test>
 </suite>

@@ -2,6 +2,7 @@ package com.briteerp.tests;
 
 
 import com.briteerp.pages.*;
+import com.briteerp.utilities.BrowserUtils;
 import com.briteerp.utilities.Driver;
 import com.briteerp.utilities.TestBase;
 import org.openqa.selenium.support.PageFactory;
@@ -27,7 +28,7 @@ public class ReportsTestCases extends TestBase {
 
 
     @Test(groups = "ST")
-    public void test01() throws InterruptedException {
+    public void test01(){
 
         extentLogger = report.createTest("Verify the report`s page");
         extentLogger.info("Selecting the environment");
@@ -36,17 +37,17 @@ public class ReportsTestCases extends TestBase {
         Assert.assertTrue(driver.getTitle().contains("Login"));
         extentLogger.info("Entering valid user credentials and click login");
         LoginPage.login();
-        Thread.sleep(5000);
+        BrowserUtils.wait(5);
         extentLogger.info("Verifying the title contains Inbox");
         Assert.assertTrue(driver.getTitle().contains("Inbox"));
         extentLogger.info("Clicking the PointofSale module");
         HomePage.pointOfSaleElement.click();
-        Thread.sleep(5000);
+        BrowserUtils.wait(5);
         extentLogger.info("Verifying the title contains Point of Sale");
         Assert.assertTrue(driver.getTitle().contains("Point of Sale"));
         extentLogger.info("Clicking the orders under reports");
         POSHomePage.reportingOrdersElement.click();
-        Thread.sleep(5000);
+        BrowserUtils.wait(5);
         extentLogger.info("Verifying the title contains Analysis");
         Assert.assertTrue(driver.getTitle().contains("Analysis"));
 
@@ -63,22 +64,22 @@ public class ReportsTestCases extends TestBase {
         Assert.assertTrue(driver.getTitle().contains("Login"));
         extentLogger.info("Entering valid user credentials and click login");
         LoginPage.login();
-        Thread.sleep(5000);
+        BrowserUtils.wait(5);
         extentLogger.info("Verifying the title contains Inbox");
         Assert.assertTrue(driver.getTitle().contains("Inbox"));
         extentLogger.info("Clicking the PointofSale module");
         HomePage.pointOfSaleElement.click();
-        Thread.sleep(5000);
+        BrowserUtils.wait(5);
         extentLogger.info("Verifying the title contains Point of Sale");
         Assert.assertTrue(driver.getTitle().contains("Point of Sale"));
         extentLogger.info("Clicking the orders under reports");
         POSHomePage.reportingOrdersElement.click();
-        Thread.sleep(5000);
+        BrowserUtils.wait(5);
         extentLogger.info("Verifying the title contains Analysis");
         Assert.assertTrue(driver.getTitle().contains("Analysis"));
         extentLogger.info("Clicking graph view option");
         POSReportingOrders.graphElement.click();
-        Thread.sleep(5000);
+        BrowserUtils.wait(5);
         extentLogger.info("Verifying the graph is displaying");
         Assert.assertTrue(POSReportingOrders.graphImageElement.isDisplayed());
 
@@ -93,22 +94,22 @@ public class ReportsTestCases extends TestBase {
         Assert.assertTrue(driver.getTitle().contains("Login"));
         extentLogger.info("Entering valid user credentials and click login");
         LoginPage.login();
-        Thread.sleep(5000);
+        BrowserUtils.wait(5);
         extentLogger.info("Verifying the title contains Inbox");
         Assert.assertTrue(driver.getTitle().contains("Inbox"));
         extentLogger.info("Clicking the PointofSale module");
         HomePage.pointOfSaleElement.click();
-        Thread.sleep(5000);
+        BrowserUtils.wait(5);
         extentLogger.info("Verifying the title contains Point of Sale");
         Assert.assertTrue(driver.getTitle().contains("Point of Sale"));
         extentLogger.info("Clicking the orders under reports");
         POSHomePage.reportingOrdersElement.click();
-        Thread.sleep(5000);
+        BrowserUtils.wait(5);
         extentLogger.info("Verifying the title contains Analysis");
         Assert.assertTrue(driver.getTitle().contains("Analysis"));
         extentLogger.info("Clicking pivot view option");
         POSReportingOrders.pivotElement.click();
-        Thread.sleep(5000);
+        BrowserUtils.wait(5);
         extentLogger.info("Verifying the pivot table is displaying");
         Assert.assertTrue(POSReportingOrders.pivotImageElement.isDisplayed());
     }
