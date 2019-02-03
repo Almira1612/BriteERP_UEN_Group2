@@ -26,12 +26,12 @@ public class POSTestCases extends TestBase {
         extentLogger = report.createTest("Verify created new point of sale can be saved");
         extentLogger.info("Selecting the environment");
         EnvironmentPage.selectEnvironment();
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(4);
         extentLogger.info("Verifying the title contain Login");
         Assert.assertTrue(driver.getTitle().contains("Login"));
         extentLogger.info("Entering valid user credentials and click login");
         LoginPage.login();
-        Thread.sleep(5000);
+        Thread.sleep(6000);
         extentLogger.info("Verifying the title contains Inbox");
         Assert.assertTrue(driver.getTitle().contains("Inbox"));
         extentLogger.info("Clicking the PointofSale module");
@@ -65,9 +65,9 @@ public class POSTestCases extends TestBase {
         BrowserUtils.wait(3);
         extentLogger.info("Clicking Archive button");
         ConfigPOSPage.ArchiveElement.click();
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(6);
         extentLogger.info("Verifying page display archievd text");
-        Assert.assertEquals(ConfigPOSPage.ArchiveButtonText.getText(),"Restore");
+        Assert.assertEquals(ConfigPOSPage.ArchiveButtonText.getText(),"Active");
 
     }
 
