@@ -20,8 +20,6 @@ public class POSTestCases extends TestBase {
         new POSHomePage();
         new HomePage();
         new ConfigPOSPage();
-        new ConfigPOSEditPage();
-        new ConfigPOSNewPage();
 
         //Login and verify the pages
         extentLogger = report.createTest("Verify created new point of sale can be saved");
@@ -47,7 +45,7 @@ public class POSTestCases extends TestBase {
         extentLogger.info("Verifying the title contains Point of sale");
         Assert.assertTrue(driver.getTitle().contains("Point of Sale"));
     }
-    @Test(groups = "ST")
+    @Test
     public void CreatePOS() throws InterruptedException {
         //Create new POS
         extentLogger.info("Clicking Create button");
@@ -58,16 +56,16 @@ public class POSTestCases extends TestBase {
         extentLogger.info("Entering valid credentials and click save");
 
         //TODO -- can not locate element
-        ConfigPOSNewPage.POSinputElement.sendKeys("Fairfax store");
-        ConfigPOSNewPage.TypeSelectElement.click();
+        ConfigPOSPage.POSinputElement.sendKeys("Fairfax store");
+        ConfigPOSPage.TypeSelectElement.click();
 
-        ConfigPOSNewPage.POSSaveButton.click();
+        ConfigPOSPage.POSSaveButton.click();
         Thread.sleep(3000);
         extentLogger.info("Verifying new POS is displayed");
-        Assert.assertEquals(ConfigPOSNewPage.NewPOSTitleElement.getText(),"Fairfax store");
+        Assert.assertEquals(ConfigPOSPage.NewPOSTitleElement.getText(),"Fairfax store");
     }
 
-    @Test(groups = "ST")
+    @Test
     public void changeOperationType() throws InterruptedException {
         //Go to POS and click edit button
         extentLogger.info("Select one Point of sale name");
@@ -75,13 +73,13 @@ public class POSTestCases extends TestBase {
         Thread.sleep(3000);
         extentLogger.info("Clicking edit button");
         //TODO -- can not locate element
-        ConfigPOSEditPage.EditElement.click();
+        ConfigPOSPage.EditElement.click();
         extentLogger.info("clicking Is a Bar/Restaurant check box and save");
-        ConfigPOSEditPage.BarCheckElement.click();
-        ConfigPOSEditPage.POSSaveButton.click();
+        ConfigPOSPage.BarCheckElement.click();
+        ConfigPOSPage.POSSaveButton.click();
         Thread.sleep(3000);
         extentLogger.info("Verify the checkbox is selected");
-        Assert.assertTrue(ConfigPOSEditPage.BarCheckElement.isSelected());
+        Assert.assertTrue(ConfigPOSPage.BarCheckElement.isSelected());
     }
 
 }
