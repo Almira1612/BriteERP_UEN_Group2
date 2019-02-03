@@ -9,6 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+// -------------------------------   Almira   -----------------------------------------------------------
+
 public class POSTestCases extends TestBase {
     public POSTestCases() {
         PageFactory.initElements(Driver.getDriver(), LoginPage.class);

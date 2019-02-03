@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+// -------------------------------   Almira   -----------------------------------------------------------
+
 public class ConfigPOSPage{
     public ConfigPOSPage() {
         PageFactory.initElements(Driver.getDriver(),this);
