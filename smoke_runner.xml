@@ -11,7 +11,7 @@
             <class name="com.briteerp.tests.PosCategoryTest"/>
             <class name="com.briteerp.tests.ReportsTestCases"/>
             <class name="com.briteerp.tests.POSTestCases"/>
-
+            <class name="com.briteerp.tests.PosOrderTestCase"/>
         </classes>
     </test>
 </suite>
