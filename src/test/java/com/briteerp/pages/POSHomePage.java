@@ -22,7 +22,7 @@ public class POSHomePage {
     static public @FindBy(xpath = "(//a[@class='oe_menu_leaf'])[9]")
     WebElement ordersSessionsElement;
 
-    static public @FindBy(xpath = "(//a[@class='oe_menu_leaf'])[10]")
+    static public @FindBy(xpath = "/html/body/div[1]/div[1]/div[1]/div[6]/ul[2]/li[1]/a/span")
     WebElement catalogProductsElement;
 
     static public @FindBy(xpath = "(//a[@class='oe_menu_leaf'])[11]")
