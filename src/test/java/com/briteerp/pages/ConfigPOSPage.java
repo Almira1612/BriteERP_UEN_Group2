@@ -2,7 +2,6 @@ package com.briteerp.pages;
 
 import com.briteerp.utilities.Driver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
@@ -23,7 +22,7 @@ public class ConfigPOSPage{
     public static @FindBy(xpath = "//div[@class='o_form_view o_form_editable']//div[@id='title']/h1/input")
     WebElement POSinputElement;
 
-    public static @FindBy(xpath = "//div[@class='o_content']//div[@class=\"o_input_dropdown\"]/input")
+    public static @FindBy(xpath = "//div[@class='o_form_sheet']//input[@class='o_input ui-autocomplete-input']")
     WebElement TypeSelectElement;
 
     public static @FindBy(className = "o_input_dropdown")
@@ -41,5 +40,11 @@ public class ConfigPOSPage{
     public static @FindBy(xpath = "//div[@name='module_pos_restaurant']/input")
     WebElement BarCheckElement;
 
+    public static @FindBy(xpath = "//div[@class='o_content']//button[@class='btn btn-sm oe_stat_button']")
+    WebElement ArchiveElement;
 
+    public static @FindBy(xpath = "//div[@class='o_content']//div[@class='o_stat_info o_field_widget']")
+    WebElement ArchiveButtonText;
+
+    public static String ExpectedTitle = "Point of Sale - Odoo";
 }
