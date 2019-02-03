@@ -21,4 +21,6 @@ public class EnvironmentPage{
     public static void selectEnvironment() {
         serverLink.click();
     }
+
+
 }
