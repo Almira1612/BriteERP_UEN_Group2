@@ -8,15 +8,15 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class PurchaseTestCase extends TestBase {
-    PurchaseTestCase() {
+public class ProductsTestCase extends TestBase {
+    ProductsTestCase() {
         PageFactory.initElements(Driver.getDriver(), LoginPage.class);
     }
 
 
     @BeforeMethod(alwaysRun = true)
     public void SetUp() throws InterruptedException {
-        new PurchaseTestCase();
+        new ProductsTestCase();
         new POSProductPage();
         new EnvironmentPage();
         new POSHomePage();
@@ -47,7 +47,7 @@ public class PurchaseTestCase extends TestBase {
         Assert.assertTrue(driver.getTitle().contains("Products"));
 
     }
-    @Test
+    @Test(groups = "ST")
     public void Test1() throws InterruptedException {
         extentLogger.info("Click the next button icon");
         POSProductPage.nexButtonIcon.click();
@@ -59,7 +59,7 @@ public class PurchaseTestCase extends TestBase {
         Thread.sleep(3000);
 
     }
-    @Test
+    @Test(groups = "ST")
     public void Test2() throws InterruptedException{
         extentLogger.info("Clicking list button icon on top right corner");
         POSProductPage.listButtonIcon.click();
