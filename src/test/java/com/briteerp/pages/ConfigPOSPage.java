@@ -24,11 +24,8 @@ public class ConfigPOSPage{
     public static @FindBy(xpath = "//div[@class='o_form_view o_form_editable']//div[@id='title']/h1/input")
     WebElement POSinputElement;
 
-    public static @FindBy(xpath = "//div[@class='o_form_sheet']//input[@class='o_input ui-autocomplete-input']")
+    public static @FindBy(xpath = "//div[@class='o_form_view o_form_editable']//div[@id='inventory_location']//input")
     WebElement TypeSelectElement;
-
-    public static @FindBy(className = "o_input_dropdown")
-    WebElement DropDownElement;
 
     public static @FindBy(xpath = "//div[@class='o_form_buttons_edit']/button[1]")
     WebElement POSSaveButton;
@@ -36,7 +33,7 @@ public class ConfigPOSPage{
     public static @FindBy(xpath = "//ol/li[@class='active']")
     WebElement NewPOSTitleElement;
 
-    public static @FindBy(xpath = "//div[@class=\"o_form_buttons_view\"]/button[1]")
+    public static @FindBy(xpath = "//div[@class='o_control_panel o_breadcrumb_full']//div[@class=\"o_form_buttons_view\"]/button[1]")
     WebElement EditElement;
 
     public static @FindBy(xpath = "//div[@name='module_pos_restaurant']/input")
@@ -49,4 +46,15 @@ public class ConfigPOSPage{
     WebElement ArchiveButtonText;
 
     public static String ExpectedTitle = "Point of Sale - Odoo";
+
+    public static @FindBy(linkText = "PoS Orders")
+    WebElement posOrdertypeLink;
+
+    public static void UnSelect(){
+        if(BarCheckElement.isSelected())
+            BarCheckElement.click();
+    }
+
+    public static @FindBy(xpath = "//div[@class='o_notification_manager']/div[@class='o_notification undefined o_error']")
+    WebElement errorAlertMethod;
 }
