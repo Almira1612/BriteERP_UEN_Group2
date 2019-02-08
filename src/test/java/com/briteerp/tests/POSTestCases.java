@@ -66,7 +66,7 @@ public class POSTestCases extends TestBase {
         extentLogger.info("Clicking Archive button");
         ConfigPOSPage.ArchiveElement.click();
         BrowserUtils.wait(6);
-        extentLogger.info("Verifying page display archievd text");
+        extentLogger.info("Verifying page display archived text");
         Assert.assertEquals(ConfigPOSPage.ArchiveButtonText.getText(),"Active");
 
     }
@@ -94,7 +94,6 @@ public class POSTestCases extends TestBase {
         //Check the pos is saved by confirm the title displaying
         extentLogger.info("Verifying new POS is displayed");
         Assert.assertTrue(ConfigPOSPage.NewPOSTitleElement.getText().contains("test 2"));
-        System.out.println("Title: "+ConfigPOSPage.NewPOSTitleElement.getText());
     }
     @Test(priority = 2)//Negative test of create POS (without select type)
     public void NegativeCreatePOS1() throws InterruptedException {
@@ -141,7 +140,7 @@ public class POSTestCases extends TestBase {
 
     }
     @Test
-    public void changeOperationType() throws InterruptedException {
+    public void setAsRestaurant() throws InterruptedException {
         //Go to point of sale page and create new POS
         extentLogger.info("Clicking the point of sale under Configuration");
         POSHomePage.configPosElement.click();
@@ -169,6 +168,107 @@ public class POSTestCases extends TestBase {
         Assert.assertTrue(ConfigPOSPage.BarCheckElement.isSelected());
     }
 
+    @Test
+    public void changePOSname() throws InterruptedException{
+        //Go to point of sale page and create new POS
+        extentLogger.info("Clicking the point of sale under Configuration");
+        POSHomePage.configPosElement.click();
+        extentLogger.info("Verifying the title contains Point of sale");
+        Assert.assertTrue(driver.getTitle().contains("Point of Sale"));
+        //Go to POS and click edit button
+        extentLogger.info("Select one Point of sale name");
+        ConfigPOSPage.allPOSList.get(ConfigPOSPage.allPOSList.size()-1).click();
+        Thread.sleep(3000);
+        //Edit the pos on the pos detail page
+        extentLogger.info("Clicking edit button");
+        ConfigPOSPage.EditElement.click();
+        Thread.sleep(2000);
+        extentLogger.info("Deleting the pos name from input box");
+        ConfigPOSPage.POSinputElement.clear();
+        Thread.sleep(2000);
+        extentLogger.info("Typing the pos name on input box and click save");
+        ConfigPOSPage.POSinputElement.sendKeys("Name changed");
+        Thread.sleep(2000);
+        ConfigPOSPage.POSSaveButton.click();
+        Thread.sleep(7000);
+        //Check the pos is saved by confirm the title displaying
+        extentLogger.info("Verifying POS is displayed with edited name");
+        Assert.assertTrue(ConfigPOSPage.NewPOSTitleElement.getText().contains("Name changed"));
+        System.out.println("Title: "+ConfigPOSPage.NewPOSTitleElement.getText());
+    }
+
+    @Test
+    public void changeOperationType() throws InterruptedException{
+        //Go to point of sale page and create new POS
+        extentLogger.info("Clicking the point of sale under Configuration");
+        POSHomePage.configPosElement.click();
+        Thread.sleep(2000);
+        //Create new POS
+        extentLogger.info("Clicking Create button");
+        ConfigPOSPage.createElement.click();
+        Thread.sleep(3000);
+        //Enter valid credentials and save it
+        extentLogger.info("Entering valid credentials and click save");
+        ConfigPOSPage.POSinputElement.sendKeys("test 2");
+        ConfigPOSPage.TypeSelectElement.click();
+        Thread.sleep(2000);
+        ConfigPOSPage.posOrdertypeLink.click();
+        Thread.sleep(2000);
+        ConfigPOSPage.POSSaveButton.click();
+        Thread.sleep(7000);
+        //Check the pos is saved by confirm the title displaying
+        extentLogger.info("Verifying new POS name is displayed");
+        Assert.assertTrue(ConfigPOSPage.NewPOSTitleElement.getText().contains("test 2"));
+        //Change the operation type of new POS
+        extentLogger.info("Clicking the Edit button");
+        ConfigPOSPage.Edit2Element.click();
+        extentLogger.info("Clicking and select operation type -- Chicago Warehouse: Receipts ");
+        ConfigPOSPage.TypeSelectElement.click();
+        Thread.sleep(1000);
+        ConfigPOSPage.CWRtypeLink.click();
+        Thread.sleep(2000);
+        extentLogger.info("Clicking the save button");
+        ConfigPOSPage.POSSaveButton.click();
+        Thread.sleep(3000);
+        extentLogger.info("Verifying the operation type changed to Chicago Warehouse: Receipts");
+        Assert.assertEquals(ConfigPOSPage.TypeDisplayElement.getText(),"Chicago Warehouse: Receipts");
+    }
+    @Test
+    public void SetStartCategory() throws InterruptedException{
+        //Go to point of sale page and create new POS
+        extentLogger.info("Clicking the point of sale under Configuration");
+        POSHomePage.configPosElement.click();
+        Thread.sleep(2000);
+        //Create new POS
+        extentLogger.info("Clicking Create button");
+        ConfigPOSPage.createElement.click();
+        Thread.sleep(3000);
+        //Enter valid credentials and save it
+        extentLogger.info("Entering valid credentials and click save");
+        ConfigPOSPage.POSinputElement.sendKeys("test 2");
+        ConfigPOSPage.TypeSelectElement.click();
+        Thread.sleep(2000);
+        ConfigPOSPage.posOrdertypeLink.click();
+        Thread.sleep(2000);
+        ConfigPOSPage.POSSaveButton.click();
+        Thread.sleep(7000);
+        //Check the pos is saved by confirm the title displaying
+        extentLogger.info("Verifying new POS name is displayed");
+        Assert.assertTrue(ConfigPOSPage.NewPOSTitleElement.getText().contains("test 2"));
+        //Set Start Category
+        extentLogger.info("Clicking the Edit button");
+        ConfigPOSPage.Edit2Element.click();
+        Thread.sleep(3000);
+        extentLogger.info("Clicking Set Start Category checkbox and choose clothes category");
+        ConfigPOSPage.startCategoryCheckBox.click();
+        ConfigPOSPage.startCategoryDropDown.click();
+        Thread.sleep(1000);
+        ConfigPOSPage.CategoryName.click();
+        extentLogger.info("Clicking the save button");
+        ConfigPOSPage.POSSaveButton.click();
+        Thread.sleep(3000);
+        extentLogger.info("Verifying the Start Category display after save");
 
 
+    }
 }

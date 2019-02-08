@@ -36,6 +36,9 @@ public class ConfigPOSPage{
     public static @FindBy(xpath = "//div[@class='o_control_panel o_breadcrumb_full']//div[@class=\"o_form_buttons_view\"]/button[1]")
     WebElement EditElement;
 
+    public static @FindBy(xpath = "//div[@class='o_control_panel']//div[@class=\"o_form_buttons_view\"]/button[1]")
+    WebElement Edit2Element;
+
     public static @FindBy(xpath = "//div[@name='module_pos_restaurant']/input")
     WebElement BarCheckElement;
 
@@ -47,8 +50,17 @@ public class ConfigPOSPage{
 
     public static String ExpectedTitle = "Point of Sale - Odoo";
 
+    public static @FindBy(xpath = "//div[@class='o_form_sheet']//a[@name='picking_type_id']")
+    WebElement TypeDisplayElement;
+
     public static @FindBy(linkText = "PoS Orders")
     WebElement posOrdertypeLink;
+
+    public static @FindBy(linkText = "Chicago Warehouse: Receipts")
+    WebElement CWRtypeLink;
+
+    public static @FindBy(linkText = "clothes")
+    WebElement CategoryName;
 
     public static void UnSelect(){
         if(BarCheckElement.isSelected())
@@ -57,4 +69,10 @@ public class ConfigPOSPage{
 
     public static @FindBy(xpath = "//div[@class='o_notification_manager']/div[@class='o_notification undefined o_error']")
     WebElement errorAlertMethod;
+
+    public static @FindBy(xpath = "//div[@class='o_form_sheet']//div[@name='start_category']/input")
+    WebElement startCategoryCheckBox;
+
+    public static @FindBy(xpath = "//div[@class='o_form_sheet']//div[@class='o_input_dropdown']/input")
+    WebElement startCategoryDropDown;
 }
