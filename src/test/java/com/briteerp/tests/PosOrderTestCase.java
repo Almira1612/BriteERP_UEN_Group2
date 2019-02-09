@@ -62,7 +62,7 @@ public class PosOrderTestCase extends TestBase {
         Assert.assertTrue(driver.getTitle().contains("Login"));
         extentLogger.info("Entering valid user credentials and click login");
         LoginPage.login();
-        Thread.sleep(7000);
+        Thread.sleep(8000);
         extentLogger.info("Verifying the title contains Inbox");
         Assert.assertTrue(driver.getTitle().contains("Inbox"));
         extentLogger.info("Clicking the PointofSale module");
@@ -87,4 +87,38 @@ public class PosOrderTestCase extends TestBase {
         BrowserUtils.wait(3);
 
     }
-}
+
+    @Test(groups = "ST")
+    public void test03() throws InterruptedException {
+
+        extentLogger = report.createTest("Verify the Orders's page");
+        extentLogger.info("Selecting the environment");
+        EnvironmentPage.selectEnvironment();
+        extentLogger.info("Verifying the title contain Login");
+        Assert.assertTrue(driver.getTitle().contains("Login"));
+        extentLogger.info("Entering valid user credentials and click login");
+        LoginPage.login();
+        Thread.sleep(5000);
+        extentLogger.info("Verifying the title contains Inbox");
+        Assert.assertTrue(driver.getTitle().contains("Inbox"));
+        extentLogger.info("Clicking the PointofSale module");
+        HomePage.pointOfSaleElement.click();
+        Thread.sleep(5000);
+        extentLogger.info("Verifying the title contains Point of Sale");
+        Assert.assertTrue(driver.getTitle().contains("Point of Sale"));
+        extentLogger.info("Clicking the order on the orders");
+        POSHomePage.ordersOrdersElement.click();
+        Thread.sleep(5000);
+
+        extentLogger.info("Clicking on the order list");
+        OrderPage.Prodect0006.click();
+        BrowserUtils.wait(3);
+
+        extentLogger.info("Clicking on the ReturnProduct");
+        OrderPage.ReturnProduct.click();
+        BrowserUtils.wait(3);
+
+
+    }
+
+   }
