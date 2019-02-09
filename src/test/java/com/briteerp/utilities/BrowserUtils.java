@@ -263,7 +263,7 @@ public class BrowserUtils {
      * @param element
      * @param check
      */
-    public void selectCheckBox(WebElement element, boolean check){
+    public static void selectCheckBox(WebElement element, boolean check){
         if(check){
             if(!element.isSelected()){
                 element.click();
