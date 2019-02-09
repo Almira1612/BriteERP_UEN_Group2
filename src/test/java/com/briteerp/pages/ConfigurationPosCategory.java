@@ -67,6 +67,18 @@ public class ConfigurationPosCategory {
     public static @FindBy (xpath="/html/body/div[1]/div[2]/div[1]/div[2]/div[2]/div/div[2]/ul/li/div/form/input[3]")
     WebElement AddbuttonforAttach;
 
+    public static @FindBy (xpath="/html/body/div[1]/div[2]/div[1]/div[2]/div[1]/div/div[1]/button[1]")
+    WebElement editButton;
+
+    public static @FindBy (xpath="/html/body/div[1]/div[2]/div[2]/div/div/div/div/div/div[1]/div/span[1]")
+    WebElement editPhoto;
+
+    public static @FindBy (xpath="//*[@id=\"o_field_input_113\"]")
+    WebElement switchbox;
+
+    public static @FindBy (xpath ="/html/body/div[1]/div[2]/div[2]/div/div/div/div/div/div[2]/table/tbody/tr[2]/td[2]/div/div/span")
+    WebElement types;
+
 
 
 
