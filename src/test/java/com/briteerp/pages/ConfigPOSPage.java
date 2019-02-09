@@ -75,4 +75,23 @@ public class ConfigPOSPage{
 
     public static @FindBy(xpath = "//div[@class='o_form_sheet']//div[@class='o_input_dropdown']/input")
     WebElement startCategoryDropDown;
+
+    public static @FindBy(xpath = "//div[@class='o_form_sheet']//div[@class='content-group mt16']/a")
+    WebElement CatagoryDisplay;
+
+    public static @FindBy(xpath = "//div[@class='o_form_sheet']//div[@name='is_header_or_footer']/input")
+    WebElement HeaderFooterCheckBox;
+
+    public static @FindBy(xpath = "//div[@class='o_form_sheet']//textarea[@name='receipt_header']")
+    WebElement HeaderTextarea;
+
+    public static @FindBy(xpath = "//div[@class='o_form_sheet']//textarea[@name='receipt_footer']")
+    WebElement FooterTextarea;
+
+    public static @FindBy(xpath = "//div[@class='o_form_sheet']//span[@name='receipt_header']")
+    WebElement Headerdisplay;
+
+    public static @FindBy(xpath = "//div[@class='o_form_sheet']//span[@name='receipt_footer']")
+    WebElement FooterDisplay;
+
 }
