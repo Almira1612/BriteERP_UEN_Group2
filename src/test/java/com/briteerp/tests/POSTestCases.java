@@ -5,6 +5,7 @@ import com.briteerp.utilities.BrowserUtils;
 import com.briteerp.utilities.Driver;
 import com.briteerp.utilities.TestBase;
 import javafx.scene.layout.Priority;
+import org.apache.commons.lang3.builder.ToStringExclude;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -26,7 +27,7 @@ public class POSTestCases extends TestBase {
         new ConfigPOSPage();
 
         //Login and verify the pages
-        extentLogger = report.createTest("Verify created new point of sale can be saved");
+        extentLogger = report.createTest("Manager should be able to edit POS");
         extentLogger.info("Selecting the environment");
         EnvironmentPage.selectEnvironment();
         BrowserUtils.wait(4);
@@ -268,7 +269,45 @@ public class POSTestCases extends TestBase {
         ConfigPOSPage.POSSaveButton.click();
         Thread.sleep(3000);
         extentLogger.info("Verifying the Start Category display after save");
+        Assert.assertEquals(ConfigPOSPage.CatagoryDisplay.getText(),"clothes");
 
-
+    }
+    @Test
+    public void SetHeaderFooter() throws InterruptedException {
+        //Go to point of sale page and create new POS
+        extentLogger.info("Clicking the point of sale under Configuration");
+        POSHomePage.configPosElement.click();
+        Thread.sleep(2000);
+        //Create new POS
+        extentLogger.info("Clicking Create button");
+        ConfigPOSPage.createElement.click();
+        Thread.sleep(3000);
+        //Enter valid credentials and save it
+        extentLogger.info("Entering valid credentials and click save");
+        ConfigPOSPage.POSinputElement.sendKeys("test 2");
+        ConfigPOSPage.TypeSelectElement.click();
+        Thread.sleep(2000);
+        ConfigPOSPage.posOrdertypeLink.click();
+        Thread.sleep(2000);
+        ConfigPOSPage.POSSaveButton.click();
+        Thread.sleep(7000);
+        //Check the pos is saved by confirm the title displaying
+        extentLogger.info("Verifying new POS name is displayed");
+        Assert.assertTrue(ConfigPOSPage.NewPOSTitleElement.getText().contains("test 2"));
+        //Set Header and Footer
+        extentLogger.info("Clicking the Edit button");
+        ConfigPOSPage.Edit2Element.click();
+        Thread.sleep(3000);
+        extentLogger.info("Clicking the Header & Footer checkbox");
+        ConfigPOSPage.HeaderFooterCheckBox.click();
+        Thread.sleep(2000);
+        extentLogger.info("Entering header and footer contents and click save");
+        ConfigPOSPage.HeaderTextarea.sendKeys("Welcome to the store");
+        ConfigPOSPage.FooterTextarea.sendKeys("Thank you for shopping with us");
+        ConfigPOSPage.POSSaveButton.click();
+        Thread.sleep(3000);
+        extentLogger.info("Verifying the header and footer displayed");
+        Assert.assertEquals(ConfigPOSPage.Headerdisplay.getText(),"Welcome to the store");
+        Assert.assertEquals(ConfigPOSPage.FooterDisplay.getText(),"Thank you for shopping with us");
     }
 }
