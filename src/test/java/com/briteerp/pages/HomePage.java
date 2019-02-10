@@ -20,6 +20,10 @@ public class HomePage {
     WebElement pointOfSaleElement;
 
 
+   public static @FindBy(xpath = "//div[@class='o_mail_chat_sidebar']")
+   WebElement sideBarElement;
+
+
 
     static public String currentTitle = "#Inbox - Odoo";
 }
